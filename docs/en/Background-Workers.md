@@ -54,7 +54,7 @@ public class PassiveUserCheckerWorker : AsyncPeriodicBackgroundWorkerBase
         Timer.Period = 600000; //10 minutes
     }
 
-    protected override async Task DoWorkAsync(
+    protected async override Task DoWorkAsync(
         PeriodicBackgroundWorkerContext workerContext)
     {
         Logger.LogInformation("Starting: Setting status of inactive users...");
@@ -80,7 +80,7 @@ public class PassiveUserCheckerWorker : AsyncPeriodicBackgroundWorkerBase
 
 ## Register Background Worker
 
-After creating a background worker class, you should to add it to the `IBackgroundWorkerManager`. The most common place is the `OnApplicationInitialization` method of your module class:
+After creating a background worker class, you should add it to the `IBackgroundWorkerManager`. The most common place is the `OnApplicationInitialization` method of your module class:
 
 ````csharp
 [DependsOn(typeof(AbpBackgroundWorkersModule))]
