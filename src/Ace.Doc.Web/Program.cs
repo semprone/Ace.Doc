@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-//using Microsoft.AspNetCore.Hosting.WindowsServices;
 using Serilog;
 using Serilog.Events;
 
@@ -30,9 +29,8 @@ namespace Ace.Doc.Web
             try
             {
                 Log.Information("Starting web host.");
+                
                 CreateHostBuilder(args).Build().Run();
-
-                Console.WriteLine("Ace.Doc Start");
 
                 return 0;
             }
@@ -48,16 +46,18 @@ namespace Ace.Doc.Web
 
         }
 
-
         internal static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder
-                    //.UseUrls("http://localhost:60000", "http://localhost:60001")
-                    .UseStartup<Startup>();
-                })
-                .UseAutofac()
-                .UseSerilog();
+            .UseWindowsService()
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+                Console.WriteLine("Ace.Doc Start...");
+            })
+            .UseAutofac()
+            .UseSerilog();
+
+
     }
+
 }

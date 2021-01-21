@@ -37,6 +37,7 @@ using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Docs;
+using Volo.Abp.Guids;
 
 namespace Ace.Doc.Web
 {
