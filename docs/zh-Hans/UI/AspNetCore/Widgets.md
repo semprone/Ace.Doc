@@ -1,6 +1,6 @@
 # 小部件
 
-ABP为创建**可重用的部件**提供了模型和基础设施. 部件系统是[ASP.NET Core ViewComponents](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components)的扩展. 在你有以下需求时,小部件会非常有用;
+ABP为创建**可重用的部件**提供了模型和基础设施. 部件系统是[ASP.NET Core ViewComponents](https://docs.microsoft.com/zh-cn/aspnet/core/mvc/views/view-components)的扩展. 在你有以下需求时,小部件会非常有用;
 
 * 在可复用的 **[模块](../../Module-Development-Basics.md)** 中定义部件.
 * 在部件中引用 **scripts & styles** 脚本.
